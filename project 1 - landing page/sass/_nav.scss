@@ -1,0 +1,112 @@
+.nav {
+    @include flex-center-between;
+
+    .logo {
+        position: relative;
+        z-index: 30;
+    }
+
+    .nav-btns {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        display: none;
+
+        * {
+            position: absolute;
+            inherits: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            padding: 0.25rem;
+            z-index: 20;
+            opacity: 0;
+            pointer-events: none;
+            cursor: pointer;
+            @include transition-fast;
+
+            &.btn-active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+
+    .nav-list {
+        @include flex-center-center;
+        gap: 3rem;
+        font-size: $font-size-small;
+
+        li {
+            cursor: pointer;
+        }
+    }
+}
+
+.nav-list li::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: transparent;
+    margin: 0.35rem auto 0;
+    border-radius: 100vw;
+    @include transition-fast;
+}
+
+.nav-list li:hover::after,
+.nav-list li:active::after {
+    background-color: $color-white;
+}
+
+body.disabled-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+@include media-md {
+    .nav {
+        .nav-btns {
+            display: block;
+        }
+
+        .nav-list-container {
+            position: fixed;
+            z-index: 10;
+            width: 100vw;
+            height: 100vh;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: $color-black;
+            @include transition-slow;
+            transform: translateX(-100%);
+
+            &.sidebar-active {
+                transform: translateX(0);
+            }
+        }
+
+        .nav-list {
+            display: block;
+            width: 90%;
+            margin-inline: auto;
+            transform: translateY(50vh) translateY(-50%);
+            font-size: $font-size-large;
+            font-family: $font-secondary;
+            text-transform: uppercase;
+
+            li {
+                width: fit-content;
+            }
+
+            & li:not(:last-of-type) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+@include media-sm {
+    .nav .nav-list {
+        font-size: $font-size-medium;
+    }
+}

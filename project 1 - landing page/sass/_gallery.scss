@@ -1,0 +1,130 @@
+.game-gallery {
+    display: grid;
+    grid-template-areas:
+        "title button"
+        "gallery gallery";
+
+    .gallery-title {
+        grid-area: title;
+        font-size: $font-size-large;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+
+    .gallery-button {
+        grid-area: button;
+        font-size: $font-size-tiny;
+        letter-spacing: 0.25rem;
+        text-transform: uppercase;
+        width: fit-content;
+        height: fit-content;
+        margin-left: auto;
+        padding: 0.4rem 1.4rem;
+        cursor: pointer;
+        border: 1px solid $color-black;
+        background-color: $color-white;
+        @include transition-fast;
+        @include shadow-small;
+
+        &:hover, &:active {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+
+    .gallery {
+        grid-area: gallery;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+    line-clamp: 2;
+
+    h2 {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        right: 2rem;
+        font-size: $font-size-medium;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        max-width: 8rem;
+        @include transition-slow
+    }
+
+    &:nth-child(4) {
+        word-spacing: 100vw;
+    }
+
+    img {
+        filter: brightness(0.5);
+        @include transition-slow
+    }
+
+    &:hover, &:active {
+
+        h2 {
+            color: $color-black;
+        }
+
+        img {
+            opacity: 0.30;
+        }
+    }
+}
+
+@include media-md {
+    .game-gallery {
+        grid-template-areas:
+            "title"
+            "gallery"
+            "button";
+        max-width: 25rem;
+        margin-inline: auto;
+    
+        .gallery-title {
+            grid-area: title;
+            text-align: center;
+        }
+    
+        .gallery-button {
+            margin-inline: auto;
+            margin-top: 3rem;
+        }
+    
+        .gallery {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+    }
+
+    .gallery-item {
+        max-height: 10rem;
+    
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center 10%;
+        }
+    }
+}
+
+@include media-sm {
+    .gallery-item {
+        max-height: 7.5rem;
+
+        h2 {
+            left: 1.5rem;
+            bottom: 1.5rem;
+        }
+    }
+}

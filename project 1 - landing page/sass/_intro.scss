@@ -1,0 +1,50 @@
+.intro {
+    position: relative;
+    margin-bottom: 7.5rem;
+
+    .intro-img {
+        width: 100%;
+        max-width: 40rem;
+        @include shadow-small;
+    }
+
+    .intro-card {
+        max-width: 35rem;
+        padding: 5rem;
+        padding-right: 0;
+        position: absolute;
+        bottom: -5rem;
+        right: 0;
+        background-color: $color-white;
+
+        h1 {
+            font-family: $font-secondary;
+            font-size: $font-size-large;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: $font-size-small;
+        }
+    }
+}
+
+@include media-md {
+    .intro {
+        position: static;
+        text-align: center;
+    
+        .intro-img {
+            max-width: 25rem;
+            margin-inline: auto;
+        }
+    
+        .intro-card {
+            padding: 0;
+            margin-top: 3rem;
+            max-width: 25rem;
+            margin-inline: auto;
+            position: static;
+        }
+    }
+}

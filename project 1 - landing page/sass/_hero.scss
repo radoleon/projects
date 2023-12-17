@@ -1,0 +1,27 @@
+.hero {
+    background: url(../images/desktop/image-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-intro {
+    font-size: $font-size-largest;
+    padding: 1.5rem;
+    max-width: 30rem;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    border: 3px solid $color-white;
+    transform: translateY(calc((100vh / 2 - 8rem))) translateY(-50%);
+    animation: load-from-left 1.25s ease-out;
+}
+
+@include media-sm {
+    .hero-intro {
+        font-size: $font-size-large;
+        animation: load-from-bottom 1.25s ease-out;
+    }
+}
+
+@import "nav";
