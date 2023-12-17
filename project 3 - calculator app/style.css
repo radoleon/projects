@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/*reset*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* variables */
+
+.theme-1 {
+  --cl-text: hsl(0, 0%, 100%);
+  --cl-nums: hsl(221, 14%, 31%);
+
+  --cl-main-bg: hsl(222, 26%, 31%);
+  --cl-keypad-bg: hsl(223, 31%, 20%);
+  --cl-screen-bg: hsl(224, 36%, 15%);
+
+  --cl-key-opt-bg: hsl(225, 21%, 49%);
+  --cl-key-opt-sw: hsl(224, 28%, 35%);
+  --cl-key-opt-hov: hsl(225, 39%, 69%);
+
+  --cl-key-eq-bg: hsl(6, 63%, 50%);
+  --cl-key-eq-sw: hsl(6, 70%, 34%);
+  --cl-key-eq-hov: hsl(6, 79%, 65%);
+
+  --cl-key-num-bg: hsl(30, 25%, 89%);
+  --cl-key-num-sw: hsl(28, 16%, 65%);
+  --cl-key-num-hov: hsl(0, 0%, 100%);
+}
+
+.theme-2 {
+  --cl-text: hsl(60, 10%, 19%);
+  --cl-nums: hsl(60, 10%, 19%);
+
+  --cl-main-bg: hsl(0, 0%, 90%);
+  --cl-keypad-bg: hsl(0, 5%, 81%);
+  --cl-screen-bg: hsl(0, 0%, 93%);
+
+  --cl-key-opt-bg: hsl(185, 42%, 37%);
+  --cl-key-opt-sw: hsl(185, 58%, 25%);
+  --cl-key-opt-hov: hsl(185, 40%, 50%);
+
+  --cl-key-eq-bg: hsl(25, 98%, 40%);
+  --cl-key-eq-sw: hsl(25, 99%, 27%);
+  --cl-key-eq-hov: hsl(25, 100%, 58%);
+
+  --cl-key-num-bg: hsl(45, 7%, 89%);
+  --cl-key-num-sw: hsl(35, 11%, 61%);
+  --cl-key-num-hov: hsl(0, 0%, 100%);
+}
+
+.theme-3 {
+  --cl-text:  hsl(52, 100%, 62%);
+  --cl-nums:  hsl(52, 100%, 62%);
+
+  --cl-main-bg: hsl(268, 75%, 9%);
+  --cl-keypad-bg: hsl(268, 71%, 12%);
+  --cl-screen-bg: hsl(268, 71%, 12%);
+
+  --cl-key-opt-bg: hsl(281, 89%, 26%);
+  --cl-key-opt-sw: hsl(285, 91%, 52%);
+  --cl-key-opt-hov: hsl(281, 52%, 39%);
+
+  --cl-key-eq-bg: hsl(176, 100%, 44%);
+  --cl-key-eq-sw: hsl(177, 92%, 70%);
+  --cl-key-eq-hov: hsl(176, 100%, 81%);
+
+  --cl-key-num-bg: hsl(268, 47%, 21%);
+  --cl-key-num-sw: hsl(290, 70%, 36%);
+  --cl-key-num-hov: hsl(268, 36%, 34%);
+}
+
+/*========
+CALCULATOR
+========*/
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'League Spartan', sans-serif;
+  background-color: var(--cl-main-bg);
+  cursor: default;
+  transition: 400ms ease;
+}
+
+#calculator {
+  width: 95%;
+  max-width: 450px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  color: var(--cl-text);
+  transition: 400ms ease;
+}
+
+.logo {
+  font-size: 1.75rem;
+}
+
+.theme-changer {
+  display: grid;
+  grid-template-areas:
+  "blank nums"
+  "title slider";
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: 0.125rem;
+}
+
+.theme-numbers {
+  grid-area: nums;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.90rem;
+}
+
+.theme-changer h3 {
+  grid-area: title;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+
+#theme-slider {
+  grid-area: slider;
+  width: 3.2rem;
+  height: 1.2rem;
+  padding: 0.1rem;
+  background-color: var(--cl-keypad-bg);
+  border-radius: 100vw;
+  display: flex;
+  position: relative;
+  transition: 400ms ease;
+}
+
+#dot {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--cl-key-eq-bg);
+  border-radius: 100vw;
+  position: absolute;
+  left: 0.1rem;
+  transition: 400ms ease;
+  cursor: pointer;
+}
+
+#change-1, #change-2, #change-3 {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.display {
+  text-align: right;
+  font-size: 2.5rem;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--cl-screen-bg);
+  color: var(--cl-text);
+  border-radius: 10px;
+  transition: 400ms ease;
+}
+
+#display-content {
+  height: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+  font-size: 2rem;
+  background-color: var(--cl-keypad-bg);
+  border-radius: 10px;
+  transition: 400ms ease;
+}
+
+.tabs > div {
+  padding-block: 0.75rem 0.25rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabs div:nth-child(17), .tabs div:nth-child(18) {
+  grid-column: span 2;
+}
+
+.num, .math {
+  background-color: var(--cl-key-num-bg);
+  color: var(--cl-nums);
+  box-shadow: 0 0.25rem 0 var(--cl-key-num-sw);
+  transition: 400ms ease;
+}
+
+.num:hover, .math:hover {
+  background-color: var(--cl-key-num-hov);
+}
+
+.opt {
+  background-color: var(--cl-key-opt-bg);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 0.25rem 0 var(--cl-key-opt-sw);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  transition: 400ms ease;
+}
+
+.opt:hover {
+  background-color: var(--cl-key-opt-hov);
+}
+
+.equals {
+  background-color: var(--cl-key-eq-bg);
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 0.25rem 0 var(--cl-key-eq-sw);
+  transition: 400ms ease;
+}
+
+.equals:hover {
+  background-color: var(--cl-key-eq-hov);
+}
+
+.theme-3 .equals {
+  color: hsl(198, 20%, 13%);
+}
