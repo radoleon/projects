@@ -1,0 +1,22 @@
+.nav {
+  pointer-events: none;
+  transform: translateY(100%);
+  transition: 650ms ease-out;
+}
+
+.nav.nav-open {
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-icons img {
+  opacity: 0;
+  pointer-events: none;
+  transition: 650ms ease-out;
+  cursor: pointer;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

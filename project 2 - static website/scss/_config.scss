@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+/* variables */
+$cl-violet: hsl(256, 26%, 20%);
+$cl-blue: hsl(216, 30%, 68%);
+$cl-dark: hsl(270, 9%, 17%);
+$cl-grey: hsl(276, 4%, 51%);
+$cl-light: hsl(0, 0%, 98%);
+
+$ff-heading: 'DM Serif Display', serif;
+$ff-body: 'Karla', sans-serif;
+
+$fs-100: 0.90rem;
+$fs-200: 1rem;
+$fs-300: 1.25rem;
+$fs-400: 1.5rem;
+$fs-500: 1.75rem;
+$fs-600: 2rem;
+$fs-700: 2.5rem;
+$fs-800: 3rem;
+
+$fw-bold: 700;
+$fw-normal: 400;
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: $ff-body;
+  font-size: $fs-200;
+  background: $cl-light;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button, input {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* utility classes */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
