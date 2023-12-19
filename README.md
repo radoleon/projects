@@ -3,4 +3,4 @@ This repository contains a selection of the best projects that I made to this da
 > [!TIP]
 > Each folder contains one project.
 
-[![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=radoleon&theme=tokyonight)]
+![Top Langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=radoleon&theme=github_dark_dimmed&langs_count=6)
