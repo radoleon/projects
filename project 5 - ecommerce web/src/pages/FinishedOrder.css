@@ -1,0 +1,47 @@
+.finished-order {
+    padding-block: 5rem;
+    text-align: center;
+}
+
+.finished-order i {
+    font-size: 5.5rem;
+    color: #3e6b2a;
+    margin-bottom: 2rem;
+}
+
+.finished-order .icon {
+    display: flex;
+    justify-content: center;
+}
+
+.finished-order .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.finished-order .order {
+    color: var(--color-primary);
+}
+
+.finished-order .message {
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 700px) {
+    
+    .finished-order i {
+        font-size: 5rem;
+    }
+    
+    .finished-order .title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .finished-order .message {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,65 @@
+.login-signup-form {
+    width: min(95%, 500px);
+    margin: auto;
+    padding-block: 3rem;
+}
+
+.login-signup-form input {
+    display: block;
+    width: 100%;
+    border: 2px solid var(--color-primary);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    margin-block: 0.25rem 1.25rem;
+    transition: 150ms;
+}
+
+.login-signup-form input:is(:hover, :focus) {
+    border: 2px solid var(--color-secondary);
+}
+
+.login-signup-form .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-signup-form label {
+    margin-bottom: rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.login-signup-form button {
+    padding: 0.5rem 3rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    width: fit-content;
+    margin: 2.5rem auto 2rem;
+    transition: 150ms;
+    cursor: pointer;
+}
+
+.login-signup-form button:is(:hover, :active) {
+    background-color: var(--color-secondary);
+}
+
+.login-signup-form .message {
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.login-signup-form a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: 150ms;
+}
+
+.login-signup-form a:is(:hover, :active) {
+    color: var(--color-secondary);
+}

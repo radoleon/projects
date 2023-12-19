@@ -1,0 +1,134 @@
+.products {
+    padding-block: 3rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.filter h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.filter span {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    font-size: 1.125rem;
+    padding: 0.25rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: 150ms ease;
+    width: fit-content;
+}
+
+.filter span:is(:hover, :active) {
+    color: var(--color-secondary);
+}
+
+.filter .active {
+    color: var(--color-secondary);
+    border-left: 3px solid var(--color-secondary);
+}
+
+.product-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    padding: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+}
+
+.product-card-img {
+    aspect-ratio: 3 / 2;
+    background-color: var(--color-secondary);
+}
+
+.product-card-img img {
+    opacity: 0.80;
+    width: 100%;
+    height: 100%;
+}
+
+.product-card-info .title {
+    font-size: 1.075rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-block: 1rem 0.5rem;
+}
+
+.product-card-info .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.product-card-info .price {
+    font-size: 1.75rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+.product-card-info a {
+    padding: 0.25rem 1.25rem;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 150ms ease;
+}
+
+.product-card-info a:is(:hover, :active) {
+    background: var(--color-secondary);
+}
+
+.products-message {
+    font-weight: 500;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .products {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .filter h2 {
+        display: none;
+    }
+
+    .filter {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem 1rem;
+        align-items:  baseline;
+        flex-wrap: wrap;
+    }
+
+    .filter span {
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .filter .active {
+        border-left: none;
+        border-bottom: 3px solid var(--color-secondary);
+    }
+
+    .products-message {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+}

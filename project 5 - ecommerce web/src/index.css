@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --color-primary: #674188;
+    --color-secondary: #C3ACD0;
+    --color-contrast: #F7EFE5;
+    --color-error: #70130a;
+    --color-text-dark: #212121;
+    --color-text-light: #575757;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text-dark);
+}
+  
+img {
+    display: block;
+    max-width: 100%;
+}
+  
+li {
+    list-style: none;
+}
+  
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+  
+button, input {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.error {
+    padding: 1rem;
+    background-color: var(--color-error);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 0.90rem;
+    gap: 1rem;
+    width: max-content;
+}
+
+.error i {
+    font-size: 1rem;
+}
+
+.container {
+    width: min(1000px, 95%);
+    margin: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border: 2px solid var(--color-primary);
+    border-radius: 100vw;
+}
