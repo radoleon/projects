@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    font-family: sans-serif;
+}
+
+body::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background-color: #000000bb;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input, button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.container {
+    width: min(90%, 500px);
+    margin: auto;
+}
+
+.weather-app {
+    position: relative;
+    z-index: 100;
+    height: 100%;
+}
+
+form {
+    width: fit-content;
+    margin: auto;
+    padding-top: 3rem;
+    margin-bottom: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back-btn {
+    cursor: pointer;
+    transition: 250ms ease;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+#input-location {
+    background-color: white;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    margin: auto;
+    color: white;
+    border-radius: 100vw;
+    border: 2px solid white;
+    background-color:transparent;
+}
+
+#input-location::placeholder {
+    color: #ffffff8d;
+}
+
+.weather-screen {
+    color: white;
+}
+
+.location-info {
+    margin-bottom: 3rem;
+}
+
+.city {
+    line-height: 1;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.state {
+    font-size: 1.25rem;
+}
+
+.temperature {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 1;
+    gap: 0.5rem;
+}
+
+.celsius {
+    font-size: 3rem;
+    margin-top: 0.5rem;
+}
+
+.condition {
+    text-align: right;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.additional-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-block: 1rem;
+    background-color: #0000005f;
+    margin-top: 3rem;
+}
+
+.additional-info > div {
+    width: 5rem;
+}
+
+.additional-info > div h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.add-location-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.35rem 1rem;
+    background: #5179f0;
+    border-radius: 25px;
+    color: white;
+    margin: auto;
+    transition: 250ms ease;
+}
+
+.add-location-btn:hover {
+    background: #4f77f099;
+}
+
+.btn-img {
+    width: 1.25rem;
+}
+
+.add-location-btn-container {
+    padding-block: 3rem;
+}
+
+.location-error {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.intro-screen {
+    color: white;
+}
+
+.greeting {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.date {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.del-btn {
+    cursor: pointer;
+    transition: 250ms ease;
+}
+
+.del-btn:hover {
+    opacity: 0.6;
+}
+
+.saved-locations {
+    padding-bottom: 3rem;
+}
+
+.saved-locations-el {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: #0000005f;
+    border-bottom: 1px solid #ffffff84;
+}
+
+.saved-locations-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.saved-locations-link {
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 250ms ease;
+}
+
+.saved-locations-link:hover {
+    color: #5179f0;
+}
