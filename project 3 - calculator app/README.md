@@ -7,8 +7,8 @@ This project is a simple calculator app that performs basic mathematical operati
 ### Showcase 🔥
 ![](https://github.com/radoleon/projects/assets/100576972/589eee4a-ad3b-4c69-958c-be3cfead86e5)
 ### Features ✨
-- Various color themes
-- Error handling
+- Option to choose between various color themes
+- Error handling with display message
 - Animated buttons on hover
 ### Languages and Tools 🔧
 ![](https://skillicons.dev/icons?i=html,css,js)
